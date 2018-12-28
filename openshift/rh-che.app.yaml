@@ -78,42 +78,42 @@ objects:
           - name: CHE_API
             valueFrom:
               configMapKeyRef:
-                key: che-api
+                key: CHE_API
                 name: rhche
           - name: CHE_CORE_JSONRPC_PROCESSOR__MAX__POOL__SIZE
             valueFrom:
               configMapKeyRef:
-                key: che-jsonrpc-max-pool-size
+                key: CHE_CORE_JSONRPC_PROCESSOR__MAX__POOL__SIZE
                 name: rhche
           - name: CHE_CORS_ENABLED
             valueFrom:
               configMapKeyRef:
-                key: che-cors-enabled
+                key: CHE_CORS_ENABLED
                 name: rhche
           - name: CHE_DEBUG_SERVER
             valueFrom:
               configMapKeyRef:
-                key: remote-debugging-enabled
+                key: CHE_DEBUG_SERVER
                 name: rhche
           - name: CHE_FABRIC8_ANALYTICS_SEGMENT__WRITE__KEY
             valueFrom:
               configMapKeyRef:
-                key: analytics.segment_write_key
+                key: CHE_FABRIC8_ANALYTICS_SEGMENT__WRITE__KEY
                 name: rhche
           - name: CHE_FABRIC8_ANALYTICS_WOOPRA__DOMAIN
             valueFrom:
               configMapKeyRef:
-                key: analytics.woopra_domain
+                key: CHE_FABRIC8_ANALYTICS_WOOPRA__DOMAIN
                 name: rhche
           - name: CHE_FABRIC8_AUTH_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                key: che-fabric8-auth-endpoint
+                key: CHE_FABRIC8_AUTH_ENDPOINT
                 name: rhche
           - name: CHE_FABRIC8_END2END_PROTECT_VERIFY__WITH__IP
             valueFrom:
               configMapKeyRef:
-                key: end2end-protect-verify-with-ip
+                key: CHE_FABRIC8_END2END_PROTECT_VERIFY__WITH__IP
                 name: rhche
           - name: CHE_FABRIC8_END2END_PROTECT_SECRET__KEY
             valueFrom:
@@ -130,52 +130,52 @@ objects:
           - name: CHE_FABRIC8_MULTICLUSTER_OSO_PROXY_URL
             valueFrom:
               configMapKeyRef:
-                key: che-fabric8-multicluster-oso-proxy-url
+                key: CHE_FABRIC8_MULTICLUSTER_OSO_PROXY_URL
                 name: rhche
           - name: CHE_FABRIC8_MULTITENANT
             valueFrom:
               configMapKeyRef:
-                key: che-fabric8-multitenant
+                key: CHE_FABRIC8_MULTITENANT
                 name: rhche
           - name: CHE_FABRIC8_USER__SERVICE_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                key: che-fabric8-user-service-endpoint
+                key: CHE_FABRIC8_USER__SERVICE_ENDPOINT
                 name: rhche
           - name: CHE_HOST
             valueFrom:
               configMapKeyRef:
-                key: che-host
+                key: CHE_HOST
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_BOOTSTRAPPER_BINARY__URL
             valueFrom:
               configMapKeyRef:
-                key: infra-bootstrapper-binary-url
+                key: CHE_INFRA_KUBERNETES_BOOTSTRAPPER_BINARY__URL
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_MACHINE__START__TIMEOUT__MIN
             valueFrom:
               configMapKeyRef:
-                key: infra-machine-start-timeout
+                key: CHE_INFRA_KUBERNETES_MACHINE__START__TIMEOUT__MIN
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_PVC_PRECREATE__SUBPATHS
             valueFrom:
               configMapKeyRef:
-                key: che-openshift-precreate-subpaths
+                key: CHE_INFRA_KUBERNETES_PVC_PRECREATE__SUBPATHS
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_PVC_QUANTITY
             valueFrom:
               configMapKeyRef:
-                key: workspaces-pvc-storage-size
+                key: CHE_INFRA_KUBERNETES_PVC_QUANTITY
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_PVC_STRATEGY
             valueFrom:
               configMapKeyRef:
-                key: infra-pvc-strategy
+                key: CHE_INFRA_KUBERNETES_PVC_STRATEGY
                 name: rhche
           - name: CHE_INFRA_KUBERNETES_TRUST__CERTS
             valueFrom:
               configMapKeyRef:
-                key: infra-trust-certs
+                key: CHE_INFRA_KUBERNETES_TRUST__CERTS
                 name: rhche
           - name: CHE_INFRA_OPENSHIFT_PROJECT
             valueFrom:
@@ -184,7 +184,7 @@ objects:
           - name: CHE_INFRA_OPENSHIFT_TLS__ENABLED
             valueFrom:
               configMapKeyRef:
-                key: che-openshift-secure-routes
+                key: CHE_INFRA_OPENSHIFT_TLS__ENABLED
                 name: rhche
           - name: CHE_INFRASTRUCTURE_ACTIVE
             value: "openshift"
@@ -206,82 +206,82 @@ objects:
           - name: CHE_KEYCLOAK_AUTH__SERVER__URL
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-auth-server-url
+                key: CHE_KEYCLOAK_AUTH__SERVER__URL
                 name: rhche
           - name: CHE_KEYCLOAK_CLIENT__ID
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-client-id
+                key: CHE_KEYCLOAK_CLIENT__ID
                 name: rhche
           - name: CHE_KEYCLOAK_GITHUB_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                key: keycloak-github-endpoint
+                key: CHE_KEYCLOAK_GITHUB_ENDPOINT
                 name: rhche
           - name: CHE_KEYCLOAK_JS__ADAPTER__URL
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-js-adapter-url
+                key: CHE_KEYCLOAK_JS__ADAPTER__URL
                 name: rhche
           - name: CHE_KEYCLOAK_OIDC__PROVIDER
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-oidc-provider
+                key: CHE_KEYCLOAK_OIDC__PROVIDER
                 name: rhche
           - name: CHE_KEYCLOAK_REALM
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-realm
+                key: CHE_KEYCLOAK_REALM
                 name: rhche
           - name: CHE_KEYCLOAK_USE__NONCE
             valueFrom:
               configMapKeyRef:
-                key: che-keycloak-use-nonce
+                key: CHE_KEYCLOAK_USE__NONCE
                 name: rhche
           - name: CHE_LIMITS_USER_WORKSPACES_RUN_COUNT
             valueFrom:
               configMapKeyRef:
-                key: che-limits-user-workspaces-run-count
+                key: CHE_LIMITS_USER_WORKSPACES_RUN_COUNT
                 name: rhche
           - name: CHE_LIMITS_WORKSPACE_ENV_RAM
             valueFrom:
               configMapKeyRef:
-                key: workspaces-memory-limit-max
+                key: CHE_LIMITS_WORKSPACE_ENV_RAM
                 name: rhche
           - name: CHE_LOCAL_CONF_DIR
             valueFrom:
               configMapKeyRef:
-                key: local-conf-dir
+                key: CHE_LOCAL_CONF_DIR
                 name: rhche
           - name: CHE_LOG_LEVEL
             valueFrom:
               configMapKeyRef:
-                key: log-level
+                key: CHE_LOG_LEVEL
                 name: rhche
           - name: CHE_LOGS_APPENDERS_IMPL
             valueFrom:
               configMapKeyRef:
-                key: logs-encoding
+                key: CHE_LOGS_APPENDERS_IMPL
                 name: rhche
           - name: CHE_LOGS_DIR
             valueFrom:
               configMapKeyRef:
-                key: che.logs.dir
+                key: CHE_LOGS_DIR
                 name: rhche
           - name: CHE_LOGS_SENTRY_LEVEL
             valueFrom:
               configMapKeyRef:
-                key: che-logs-sentry-level
+                key: CHE_LOGS_SENTRY_LEVEL
                 name: rhche
           - name: CHE_METRICS_ENABLED
             valueFrom:
               configMapKeyRef:
-                key: che-metrics-enabled
+                key: CHE_METRICS_ENABLED
                 name: rhche
           - name: CHE_MULTIUSER
             valueFrom:
               configMapKeyRef:
-                key: multi-user
+                key: CHE_MULTIUSER
                 name: rhche
           - name: CHE_OPENSHIFT_SERVICE__ACCOUNT_ID
             valueFrom:
@@ -296,97 +296,97 @@ objects:
           - name: CHE_PORT
             valueFrom:
               configMapKeyRef:
-                key: port
+                key: CHE_PORT
                 name: rhche
           - name: CHE_SYSTEM_ADMIN__NAME
             valueFrom:
               configMapKeyRef:
-                key: che-system-admin-name
+                key: CHE_SYSTEM_ADMIN__NAME
                 name: rhche
           - name: CHE_SYSTEM_SUPER__PRIVILEGED__MODE
             valueFrom:
               configMapKeyRef:
-                key: che-system-super-privileged-mode
+                key: CHE_SYSTEM_SUPER__PRIVILEGED__MODE
                 name: rhche
           - name: CHE_WORKSPACE_PLUGIN__REGISTRY__URL
             valueFrom:
               configMapKeyRef:
-                key: plugin-registry-url
+                key: CHE_WORKSPACE_PLUGIN__REGISTRY__URL
                 name: rhche
           - name: CHE_PREDEFINED_STACKS_RELOAD__ON__START
             valueFrom:
               configMapKeyRef:
-                key: che.predefined.stacks.reload_on_start
+                key: CHE_PREDEFINED_STACKS_RELOAD__ON__START
                 name: rhche
           - name: CHE_WEBSOCKET_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                key: che-websocket-endpoint
+                key: CHE_WEBSOCKET_ENDPOINT
                 name: rhche
           - name: CHE_WORKSPACE_AGENT_DEV_INACTIVE__STOP__TIMEOUT__MS
             valueFrom:
               configMapKeyRef:
-                key: che.workspace.agent.dev.inactive_stop_timeout_ms
+                key: CHE_WORKSPACE_AGENT_DEV_INACTIVE__STOP__TIMEOUT__MS
                 name: rhche
           - name: CHE_WORKSPACE_AUTO__START
             valueFrom:
               configMapKeyRef:
-                key: enable-workspaces-autostart
+                key: CHE_WORKSPACE_AUTO__START
                 name: rhche
           - name: CHE_WORKSPACE_DEFAULT__MEMORY__MB
             valueFrom:
               configMapKeyRef:
-                key: workspaces-memory-limit
+                key: CHE_WORKSPACE_DEFAULT__MEMORY__MB
                 name: rhche
           - name: CHE_WORKSPACE_JAVA__OPTIONS
             valueFrom:
               configMapKeyRef:
-                key: che-workspaces-java-opts
+                key: CHE_WORKSPACE_JAVA__OPTIONS
                 name: rhche
           - name: CHE_WORKSPACE_LOGS_ROOT__DIR
             valueFrom:
               configMapKeyRef:
-                key: che-workspace-logs
+                key: CHE_WORKSPACE_LOGS_ROOT__DIR
                 name: rhche
           - name: CHE_WORKSPACE_SERVER_PING__INTERVAL__MILLISECONDS
             valueFrom:
               configMapKeyRef:
-                key: che-workspace-server-ping-interval-milliseconds
+                key: CHE_WORKSPACE_SERVER_PING__INTERVAL__MILLISECONDS
                 name: rhche
           - name: CHE_WORKSPACE_SERVER_PING__SUCCESS__THRESHOLD
             valueFrom:
               configMapKeyRef:
-                key: che-workspace-server-ping-success-threshold
+                key: CHE_WORKSPACE_SERVER_PING__SUCCESS__THRESHOLD
                 name: rhche
           - name: CHE_WORKSPACE_STORAGE
             valueFrom:
               configMapKeyRef:
-                key: workspace-storage
+                key: CHE_WORKSPACE_STORAGE
                 name: rhche
           - name: CHE_WSAGENT_CORS_ALLOWED__ORIGINS
             valueFrom:
               configMapKeyRef:
-                key: che-wsagent-cors-allowed-origins
+                key: CHE_WSAGENT_CORS_ALLOWED__ORIGINS
                 name: rhche
           - name: JAVA_OPTS
             valueFrom:
               configMapKeyRef:
-                key: che-server-java-opts
+                key: JAVA_OPTS
                 name: rhche
           - name: SENTRY_DSN
             valueFrom:
               configMapKeyRef:
-                key: che-logs-sentry-dsn
+                key: SENTRY_DSN
                 name: rhche
           - name: SENTRY_STACKTRACE_APP_PACKAGES
             valueFrom:
               configMapKeyRef:
-                key: sentry-stacktrace-app-packages
+                key: SENTRY_STACKTRACE_APP_PACKAGES
                 name: rhche
           - name: SENTRY_ENVIRONMENT
             valueFrom:
               configMapKeyRef:
-                key: sentry-environment
+                key: SENTRY_ENVIRONMENT
                 name: rhche
           - name: SENTRY_RELEASE
             value: ${IMAGE_TAG}
