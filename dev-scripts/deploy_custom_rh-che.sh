@@ -314,8 +314,7 @@ CHE_CONFIG_YAML=$(echo "$CHE_CONFIG_YAML" | \
                       .\"data\".\"che-api\" = \"http$SECURE://rhche-$RH_CHE_PROJECT_NAMESPACE.devtools-dev.ext.devshift.net/api\" |
                       .\"data\".\"che-websocket-endpoint\" = \"ws$SECURE://rhche-$RH_CHE_PROJECT_NAMESPACE.devtools-dev.ext.devshift.net/api/websocket\" |
                       .\"metadata\".\"name\" = \"rhche\" |
-                      .\"data\".\"che-openshift-secure-routes\" = \"$RH_CHE_USE_TLS\" |
-                      .\"data\".\"che-secure-external-urls\" = \"$RH_CHE_USE_TLS\" ")
+                      .\"data\".\"che-openshift-secure-routes\" = \"$RH_CHE_USE_TLS\" ")
 
 if ! (echo "$CHE_CONFIG_YAML" | oc apply -f - > /dev/null 2>&1); then
   echo -e "\\033[91;1mFailed to apply configmap [$?].\\033[0m"

@@ -21,7 +21,6 @@ data:
   CHE_LOGS_DIR: "/data/logs"
   CHE_INFRA_KUBERNETES_PVC_PRECREATE__SUBPATHS: "false"
   CHE_INFRA_OPENSHIFT_TLS__ENABLED: "false"
-  che-secure-external-urls: "false"
   JAVA_OPTS: "-XX:+UseParallelGC -XX:MinHeapFreeRatio=25 -XX:MaxHeapFreeRatio=40 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -Xms50m -Xmx180m -Dfile.encoding=UTF8"
   CHE_WORKSPACE_AGENT_DEV_INACTIVE__STOP__TIMEOUT__MS: "900000"
   CHE_WORKSPACE_LOGS_ROOT__DIR: "/workspace_logs"
