@@ -90,12 +90,6 @@ objects:
                 key: site-key
                 name: rhche-end2end-protection
                 optional: true
-          - name: CHE_INFRA_OPENSHIFT_PROJECT
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: CHE_INFRASTRUCTURE_ACTIVE
-            value: "openshift"
           - name: CHE_JDBC_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -121,6 +115,12 @@ objects:
               secretKeyRef:
                   key: service.account.secret
                   name: rhche
+          - name: CHE_INFRA_OPENSHIFT_PROJECT
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: CHE_INFRASTRUCTURE_ACTIVE
+            value: "openshift"
           - name: SENTRY_RELEASE
             value: ${IMAGE_TAG}
           - name: CHE_WORKSPACE_PLUGIN__BROKER_THEIA__REMOTE_IMAGE
