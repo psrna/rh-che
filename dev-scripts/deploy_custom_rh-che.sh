@@ -90,6 +90,7 @@ function checkPostgresStatus() {
 
 function checkCheStatus() {
   RH_CHE_DEPLOYMENT_OC_STATUS=$(oc get dc rhche -o json)
+  echo -e "status:${RH_CHE_DEPLOYMENT_OC_STATUS}"
   export RH_CHE_STATUS_PROGRESS=$(echo "$RH_CHE_DEPLOYMENT_OC_STATUS" | jq ".status.conditions | map(select(.type == \"Progressing\").status)[]")
   export RH_CHE_STATUS_AVAILABLE=$(echo "$RH_CHE_DEPLOYMENT_OC_STATUS" | jq ".status.conditions | map(select(.type == \"Available\").status)[]")
 }
