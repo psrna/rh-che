@@ -256,6 +256,7 @@ cd ../ || exit 1
 # GET CHE-APP CONFIGS
 if [ "${RH_CHE_RUNNING_STANDALONE_SCRIPT}" == "true" ]; then
   RH_CHE_APP="./rh-che.app.yaml"
+echo "1:https://raw.githubusercontent.com/redhat-developer/rh-che/"${RH_CHE_GITHUB_BRANCH}"/openshift/rh-che.app.yaml"
   RH_CHE_CONFIG="./rh-che.config.yaml"
   if ! (curl -L0fs https://raw.githubusercontent.com/redhat-developer/rh-che/"${RH_CHE_GITHUB_BRANCH}"/openshift/rh-che.app.yaml -o "${RH_CHE_APP}" > /dev/null 2>&1); then
     echo -e "\\033[91;1mCould not download che app definition config!\\033[0m"
@@ -268,6 +269,7 @@ if [ "${RH_CHE_RUNNING_STANDALONE_SCRIPT}" == "true" ]; then
 else
   ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
   RH_CHE_APP="${ABSOLUTE_PATH}/../openshift/rh-che.app.yaml"
+echo 2
   RH_CHE_CONFIG="${ABSOLUTE_PATH}/../openshift/rh-che.config.yaml"
 fi
 
@@ -326,8 +328,12 @@ echo -e "\\033[92;1mChe config deployed on \\033[34m${RH_CHE_PROJECT_NAMESPACE}\
 # PROCESS CHE APP CONFIG
 CHE_APP_CONFIG_YAML=$(yq "" ${RH_CHE_APP})
 
+echo 3
+cat "${RH_CHE_APP}"
+echo 4
 #DEBUG
 echo "$CHE_APP_CONFIG_YAML"
+echo 5
 
 CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
                       yq "(.parameters[] | select(.name == \"IMAGE\").value) |= \"$RH_CHE_DOCKER_REPOSITORY\" |
@@ -336,6 +342,7 @@ CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
 
 #DEBUG
 echo "$CHE_APP_CONFIG_YAML"
+echo 6
 
 CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
                       yq "(.objects[] | select(.kind == \"DeploymentConfig\").spec.template.spec.containers[0].env[] |
@@ -351,14 +358,14 @@ CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
 
 #DEBUG
 echo "$CHE_APP_CONFIG_YAML"
-
+echo 7
 if [ "${RH_CHE_USE_TLS}" != "true" ]; then
   CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | yq "del (.objects[] | select(.kind == \"Route\").spec.tls)")
 fi
 
 #DEBUG
 echo "$CHE_APP_CONFIG_YAML"
-
+echo 8
 if ! (echo "$CHE_APP_CONFIG_YAML" | oc process -f - | oc apply -f - > /dev/null 2>&1); then
   echo -e "\\033[91;1mFailed to process che config [$?]\\033[0m"
   exit 5
