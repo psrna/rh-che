@@ -74,9 +74,9 @@ objects:
           app: rhche
       spec:
         containers:
-        envFrom:
-        - configMapRef:
-          name: rhche
+          envFrom:
+          - configMapRef:
+            name: rhche
         - env:
           - name: CHE_FABRIC8_END2END_PROTECT_SECRET__KEY
             valueFrom:

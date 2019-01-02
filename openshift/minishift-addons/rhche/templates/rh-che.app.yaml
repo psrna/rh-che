@@ -74,9 +74,9 @@ objects:
           app: rhche
       spec:
         containers:
-        envFrom:
-        - configMapRef:
-          name: rhche
+          envFrom:
+          - configMapRef:
+            name: rhche
         - env:
           - name: CHE_API
             value: "${PROTOCOL}://rhche-${NAMESPACE}.${ROUTING_SUFFIX}/api"
