@@ -325,10 +325,17 @@ echo -e "\\033[92;1mChe config deployed on \\033[34m${RH_CHE_PROJECT_NAMESPACE}\
 
 # PROCESS CHE APP CONFIG
 CHE_APP_CONFIG_YAML=$(yq "" ${RH_CHE_APP})
+
+#DEBUG
+echo "$CHE_APP_CONFIG_YAML"
+
 CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
                       yq "(.parameters[] | select(.name == \"IMAGE\").value) |= \"$RH_CHE_DOCKER_REPOSITORY\" |
                           (.parameters[] | select(.name == \"IMAGE_TAG\").value) |= \"$RH_CHE_DOCKER_IMAGE_TAG\" |
                           (.objects[] | select(.kind == \"DeploymentConfig\").spec.template.spec.containers[0].imagePullPolicy) |= \"Always\"")
+
+#DEBUG
+echo "$CHE_APP_CONFIG_YAML"
 
 CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
                       yq "(.objects[] | select(.kind == \"DeploymentConfig\").spec.template.spec.containers[0].env[] |
@@ -342,10 +349,15 @@ CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | \
                           (.objects[] | select(.kind == \"DeploymentConfig\").spec.template.spec.containers[0].env[] |
                            select(.name == \"CHE_JDBC_USERNAME\").valueFrom) |= {\"configMapKeyRef\":{\"key\":\"che.jdbc.username\",\"name\":\"rhche\"}}")
 
+#DEBUG
+echo "$CHE_APP_CONFIG_YAML"
+
 if [ "${RH_CHE_USE_TLS}" != "true" ]; then
   CHE_APP_CONFIG_YAML=$(echo "$CHE_APP_CONFIG_YAML" | yq "del (.objects[] | select(.kind == \"Route\").spec.tls)")
 fi
 
+#DEBUG
+echo "$CHE_APP_CONFIG_YAML"
 
 if ! (echo "$CHE_APP_CONFIG_YAML" | oc process -f - | oc apply -f - > /dev/null 2>&1); then
   echo -e "\\033[91;1mFailed to process che config [$?]\\033[0m"
