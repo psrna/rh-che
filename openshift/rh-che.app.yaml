@@ -74,9 +74,6 @@ objects:
           app: rhche
       spec:
         containers:
-          envFrom:
-          - configMapRef:
-            name: rhche
         - env:
           - name: CHE_FABRIC8_END2END_PROTECT_SECRET__KEY
             valueFrom:
@@ -127,6 +124,9 @@ objects:
             value: "wsskeleton/che-plugin-broker:theia-broker"
           - name: CHE_WORKSPACE_PLUGIN__BROKER_THEIA_IMAGE
             value: "wsskeleton/che-plugin-broker:theia-broker-2"
+          envFrom:
+          - configMapRef:
+            name: rhche
           image: ${IMAGE}:${IMAGE_TAG}
           imagePullPolicy: IfNotPresent
           livenessProbe:
