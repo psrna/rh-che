@@ -120,10 +120,6 @@ objects:
             value: "openshift"
           - name: SENTRY_RELEASE
             value: ${IMAGE_TAG}
-          - name: CHE_WORKSPACE_PLUGIN__BROKER_THEIA__REMOTE_IMAGE
-            value: "wsskeleton/che-plugin-broker:theia-broker"
-          - name: CHE_WORKSPACE_PLUGIN__BROKER_THEIA_IMAGE
-            value: "wsskeleton/che-plugin-broker:theia-broker-2"
           envFrom:
           - configMapRef:
             name: rhche
