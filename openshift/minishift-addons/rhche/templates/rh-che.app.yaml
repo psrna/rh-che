@@ -127,7 +127,7 @@ objects:
             value: "150mb"
           envFrom:
           - configMapRef:
-            name: rhche
+              name: rhche
           image: ${IMAGE_RH_CHE}:${RH_CHE_VERSION}
           imagePullPolicy: "${PULL_POLICY}"
           livenessProbe:
