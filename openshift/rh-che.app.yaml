@@ -122,7 +122,7 @@ objects:
             value: ${IMAGE_TAG}
           envFrom:
           - configMapRef:
-            name: rhche
+              name: rhche
           image: ${IMAGE}:${IMAGE_TAG}
           imagePullPolicy: IfNotPresent
           livenessProbe:
